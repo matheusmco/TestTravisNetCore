@@ -1,9 +1,10 @@
 
 language: csharp
-solution: TestTravisNetCore.sln
+mono: none
+dotnet: 2.2
+
 install:
-  - nuget restore TestTravisNetCore.sln
-  - nuget install xunit.runners -Version 1.9.2 -OutputDirectory testrunner
+  - dotnet restore
 script:
-  - msbuild /p:Configuration=Release TestTravisNetCore.sln
-  - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe ./TestTravisNetCore.Tests/bin/Release/TestTravisNetCore.Tests.dll
+  - dotnet build -c Release
+  - dotnet test

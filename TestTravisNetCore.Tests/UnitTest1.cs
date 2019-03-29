@@ -9,7 +9,7 @@ namespace TestTravisNetCore.Tests
         [Fact]
         public void Test1()
         {
-            Assert.True(new CompareIntegerHelper().IsZero(0));
+            Assert.True(new CompareIntegerHelper().IsZero(1));
         }
     }
 }
